@@ -1,0 +1,226 @@
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Botones */
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* Formularios */
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: red;
+    font-size: 0.875em;
+}
+
+/* Encabezados */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Listas */
+.repo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.repo-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+.repo-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedores */
+.page-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+  }
+
+/* Botones específicos */
+.btn-signup {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-login {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-profile {
+    background-color: #ffc107;
+    color: white;
+}
+
+.profile-details {
+    margin-bottom: 20px;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-details h2 {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .profile-details p {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* Loading spinner */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Error container */
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .error {
+    font-size: 1.2rem;
+    color: red;
+    text-align: center;
+  }
+  
+  /* Logout button */
+  .logout-button {
+    margin-top: 20px;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+  }
+  
+  .logout-button:active {
+    transform: scale(0.95);
+  }
