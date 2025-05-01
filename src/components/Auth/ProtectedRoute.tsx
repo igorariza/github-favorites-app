@@ -1,5 +1,4 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
 interface ProtectedRouteProps {
@@ -7,14 +6,38 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const { isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
+  const [redirecting, setRedirecting] = useState(false);
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      setRedirecting(true);
+      const timer = setTimeout(() => {
+        loginWithRedirect();
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading, isAuthenticated, loginWithRedirect]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Checking authentication...</p>
+      </div>
+    );
   }
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+  if (!isAuthenticated && redirecting) {
+    return (
+      <div className="modal-overlay">
+        <div className="modal">
+          <p className="modal-title">Unauthorized Access</p>
+          <p>You are not authorized to view this page.</p>
+          <p>Redirecting to login...</p>
+        </div>
+      </div>
+    );
   }
 
   return children;

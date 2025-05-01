@@ -23,15 +23,16 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <div className="form">
-      <h2>Sign Up</h2>
-      <div className="button-group">
-        <button onClick={handleSignUp} className="button button-primary">
-          Sign Up with Auth0
-        </button>
-        <button onClick={handleGoBack} className="button button-secondary">
-          Back to Home
-        </button>
+    <div className="form-container">
+      <div className="form">
+        <div className="button-group">
+          <button onClick={handleSignUp} className="button button-primary">
+            Sign Up with Auth0
+          </button>
+          <button onClick={handleGoBack} className="button button-secondary">
+            Back to Home
+          </button>
+        </div>
       </div>
     </div>
   );

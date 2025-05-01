@@ -13,14 +13,11 @@ const HomePage: React.FC = () => {
         <div className="homepage-container">
             <header className="homepage-header">
                 <h1>Welcome to GitHub Favorites</h1>
-                <p>Discover and manage your favorite GitHub repositories with ease.</p>
+                <p>Discover and manage your favorite GitHub easy repositories.</p>
             </header>
             <div className="homepage-buttons">
                 <button onClick={() => handleNavigation('/signup')} className="btn btn-signup">
                     Sign Up
-                </button>
-                <button onClick={() => handleNavigation('/login')} className="btn btn-login">
-                    Login
                 </button>
                 <button onClick={() => handleNavigation('/profile')} className="btn btn-profile">
                     Profile Page

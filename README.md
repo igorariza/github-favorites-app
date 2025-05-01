@@ -6,7 +6,6 @@ This project is a Single Page Application (SPA) that implements user authenticat
 
 - User Authentication
   - Sign Up
-  - Login
 - Profile Page displaying user information
 - List of GitHub repositories
 
@@ -16,18 +15,18 @@ This project is a Single Page Application (SPA) that implements user authenticat
 - TypeScript
 - Vite
 - CSS
+- Axios for API calls
+- Auth0 for authentication
 
 ## Project Structure
 
 ```
-spa-project
-├── public
-│   ├── index.html
-│   └── favicon.ico
+
+├── index.html
+└── favicon.ico
 ├── src
 │   ├── components
 │   │   ├── Auth
-│   │   │   ├── Login.tsx
 │   │   │   └── SignUp.tsx
 │   │   ├── Profile
 │   │   │   └── ProfilePage.tsx
@@ -39,7 +38,6 @@ spa-project
 │   │   └── useAuth.ts
 │   ├── pages
 │   │   ├── HomePage.tsx
-│   │   ├── LoginPage.tsx
 │   │   ├── SignUpPage.tsx
 │   │   └── ProfilePage.tsx
 │   ├── services
@@ -62,25 +60,33 @@ spa-project
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/igorariza/github-favorites-app.git
    ```
 
 2. Navigate to the project directory:
    ```
    cd spa-project
    ```
-
-3. Install dependencies:
+3. Create a `.env` file in the root directory and configure the following variables:
+```properties
+VITE_AUTH0_DOMAIN=your-auth0-domain
+VITE_AUTH0_CLIENT_ID=your-auth0-client-id
+GITHUB_API_URL=https://api.github.com
+```
+   Replace `your-auth0-domain` and `your-auth0-client-id` with your Auth0 credentials.
+   Replace `GITHUB_API_URL` with the GitHub API URL if needed.
+   Make sure to set up your Auth0 application to allow the redirect URI to your local development URL (e.g., `http://localhost:3000`).
+4. Install dependencies:
    ```
    npm install
    ```
 
-4. Start the development server:
+5. Start the server:
    ```
-   npm run dev
+   npm run start
    ```
 
-5. Open your browser and go to `http://localhost:3000` to view the application.
+6. Open your browser and go to `http://localhost:3000` to view the application.
 
 ## Usage
 
